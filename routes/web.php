@@ -27,7 +27,7 @@ Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 // Admin routes
 Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', function () {
-        return view('admin.dashboard');
+        return redirect()->route('admin.admin.projects.index');
     })->name('dashboard');
 
     // Settings management
