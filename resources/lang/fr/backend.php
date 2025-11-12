@@ -1,0 +1,23 @@
+<?php
+return [
+    'dashboard' => 'Tableau de bord',
+    'complaints' => 'Réclamations',
+    'pages' => 'Pages',
+    'contacts' => 'Contacts',
+    'privacy_policy' => 'Politique de confidentialité',
+    'about' => 'À propos',
+    'app_setting' => 'Paramètres du site',
+    'edit' => 'Modifier',
+    'save' => 'Enregistrer',
+    'back' => 'Retour',
+    'name' => 'Nom',
+    'description' => 'Description',
+    'logo' => 'Logo',
+    'phone' => 'Téléphone',
+    'whatsapp' => 'WhatsApp',
+    'email' => 'Email',
+    'localisation' => 'Localisation',
+    'settings' => 'Paramètres',
+    'site_settings' => 'Paramètres du site',
+    'update_success' => 'Paramètres mis à jour avec succès',
+];
