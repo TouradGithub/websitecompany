@@ -834,129 +834,143 @@
     </style>
 </head>
 <body>
+
+    @php
+        $setting = App\Models\Setting::first();
+    @endphp
     <!-- Header -->
-    <header class="header">
-        <nav class="nav-container">
-            <a href="#" class="logo">DevCraft</a>
+<header class="header">
+    <nav class="nav-container">
+        <a href="#" class="logo">{{ $setting?->name }}</a>
 
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                <span class="hamburger"></span>
-            </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Basculer le menu">
+            <span class="hamburger"></span>
+        </button>
 
-            <div class="nav-menu" id="navMenu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-        </nav>
-    </header>
+        <div class="nav-menu" id="navMenu">
+            <a href="#home" class="nav-link">Accueil</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#projects" class="nav-link">Projets</a>
+            {{-- <a href="#testimonials" class="nav-link">Témoignages</a> --}}
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+</header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Transform Your Ideas Into Powerful Digital Solutions</h1>
-                <p class="hero-description">
-                    We're a team of passionate developers crafting exceptional web and mobile applications
-                    that drive business growth and innovation.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Start Your Project</a>
-                    <a href="#projects" class="btn btn-secondary">View Our Work</a>
-                </div>
+<!-- Section Héros -->
+<section id="home" class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Transformez vos idées en solutions numériques puissantes</h1>
+            <p class="hero-description">
+                {{ $setting?->description }}
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Commencez votre projet</a>
+                <a href="#projects" class="btn btn-secondary">Voir nos réalisations</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Services Section -->
-    @include('front.service')
-    <!-- Projects Section -->
-    @include('front.project')
+<!-- Section Services -->
+@include('front.service')
 
-    <!-- Testimonials Section -->
-   @include('front.Testimonial')
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-description">
-                    Ready to start your project? Let's discuss how we can help
-                </p>
+<!-- Section Projets -->
+@include('front.project')
+
+<!-- Section Témoignages -->
+{{-- @include('front.Testimonial') --}}
+
+<!-- Section Contact -->
+<section id="contact" class="contact">
+
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Contactez-nous</h2>
+            <p class="section-description">
+                Prêt à démarrer votre projet ? Discutons de la façon dont nous pouvons vous aider.
+            </p>
+        </div>
+
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
             </div>
+        @endif
 
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                        </div>
-                        <h3 class="contact-card-title">Office Location</h3>
-                        <p class="contact-card-text">123 Tech Street, Silicon Valley, CA 94025</p>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
                     </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </div>
-                        <h3 class="contact-card-title">Email Us</h3>
-                        <p class="contact-card-text">hello@devcraft.com</p>
-                    </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="contact-card-title">Call Us</h3>
-                        <p class="contact-card-text">+1 (555) 123-4567</p>
-                    </div>
+                    <h3 class="contact-card-title">Adresse du bureau</h3>
+                    <p class="contact-card-text">{{ $setting?->localisation }}</p>
                 </div>
 
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
                     </div>
+                    <h3 class="contact-card-title">Envoyez-nous un e-mail</h3>
+                    <p class="contact-card-text">{{ $setting?->email }}</p>
+                </div>
 
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
                     </div>
-
-                    <div class="form-group">
-                        <label for="subject" class="form-label">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-input" placeholder="Project inquiry" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell us about your project..." required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                </form>
+                    <h3 class="contact-card-title">Appelez-nous</h3>
+                    <p class="contact-card-text">{{ $setting?->phone }}</p>
+                </div>
             </div>
+
+            <form class="contact-form" action="{{ route('front.contact.submit') }}" method="POST" id="contactForm">
+                @csrf
+                <div class="form-group">
+                    <label for="name" class="form-label">Nom</label>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Votre nom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="votre@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject" class="form-label">Sujet</label>
+                    <input type="text" id="subject" name="subject" class="form-input" placeholder="Demande de projet" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Parlez-nous de votre projet..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">Envoyer le message</button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3 class="footer-title">DevCraft Solutions</h3>
+                    <h3 class="footer-title">{{$setting->name}}</h3>
                     <p class="footer-text">
-                        Building exceptional digital experiences that drive business growth and innovation.
+                       {{$setting->description}}
                     </p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="GitHub">
@@ -1008,11 +1022,11 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 DevCraft Solutions. All rights reserved.</p>
+                <p>&copy; 2025{{$setting?->name}}. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
+<script src="{{ asset('Dashboard') }}/js/sweetalert.min.js"></script>
     <script>
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById("mobileMenuBtn");
@@ -1137,41 +1151,7 @@
             lastScroll = currentScroll;
         });
 
-        // Contact Form Handler
-        const contactForm = document.getElementById("contactForm");
-
-        contactForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            // Get form data
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-
-            // For Laravel integration, uncomment this:
-            /*
-            fetch('/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(result => {
-                alert('Message sent successfully!');
-                contactForm.reset();
-            })
-            .catch(error => {
-                alert('Error sending message. Please try again.');
-                console.error('Error:', error);
-            });
-            */
-
-            // For demo purposes
-            alert("Thank you for your message! We will get back to you soon.");
-            contactForm.reset();
-        });
+     
 
         // Intersection Observer for animations
         const observerOptions = {
@@ -1196,5 +1176,83 @@
             observer.observe(card);
         });
     </script>
+
+    
+<script>
+    $(document).ready(function() {
+
+        // Success Message ...
+        @if( session()->has('success') )
+            swal({
+                title: "{!! session()->get("success") !!}",
+                icon: "success",
+                button : "{!! trans('backend.ok') !!}"
+            });
+        @endif
+
+        // Error Message ...
+        @if( session()->has('error') )
+            swal({
+                title: "{!! session()->get("error") !!}",
+                icon: "error",
+                button : "{!! trans('backend.ok') !!}"
+            });
+        @endif
+
+        // Warning Message ...
+        @if( session()->has('warning') )
+            swal({
+                title: "{!! session()->get("warning") !!}",
+                icon: "warning",
+                button : "{!! trans('backend.ok') !!}"
+            });
+        @endif
+
+        // Confirm Delete .... ??!
+        $(document).on('click' , '.delete' ,function(e){
+
+            e.preventDefault();
+
+            var that = $(this);
+
+            swal({
+                title: "{!! trans('backend.confirm_delete') !!}",
+                icon: "error",
+                buttons: ["{!! trans('backend.no') !!}", "{!! trans('backend.yes') !!}"],
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+            if (willDelete) {
+                    that.closest('form').submit();
+                }
+            });
+
+        });
+
+
+
+        // Confirm Delete .... ??!
+        $(document).on('click' , '.confirm_logout' ,function(e){
+
+            e.preventDefault();
+
+            var that = $(this);
+
+            swal({
+                title: "{!! trans('backend.confirm_logout') !!}",
+                icon: "info",
+                buttons: ["{!! trans('backend.no') !!}", "{!! trans('backend.yes') !!}"],
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+            if (willDelete) {
+                    that.closest('form').submit();
+                }
+            });
+
+        });
+
+    } );
+</script>
 </body>
 </html>

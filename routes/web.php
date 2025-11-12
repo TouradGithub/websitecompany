@@ -19,6 +19,7 @@ Route::get('admin/login', [AuthController::class, 'showLoginForm'])->name('admin
 Route::post('admin/login', [AuthController::class, 'login'])->name('admin.login.post');
 // Default login route for auth middleware compatibility
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('contact-post', [\App\Http\Controllers\Admin\ContactController::class,'store'])->name('front.contact.submit');
 
 // Global logout used by admin layout
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
@@ -33,6 +34,8 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->name('admi
     Route::get('settings', [\App\Http\Controllers\Admin\SettingController::class, 'edit'])->name('settings.edit');
     Route::post('settings', [\App\Http\Controllers\Admin\SettingController::class, 'update'])->name('settings.update');
     Route::resource('services', ServiceController::class);
+    Route::resource('contacts', \App\Http\Controllers\Admin\ContactController::class);
+
 
     // Projects management
     Route::resource('projects', \App\Http\Controllers\Admin\ProjectController::class, ['as' => 'admin']);

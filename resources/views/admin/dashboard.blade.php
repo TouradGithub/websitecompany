@@ -44,7 +44,7 @@
             </div>
             <div class="ml-4">
                 <h2 class="text-sm font-medium text-gray-600">Projets en vedette</h2>
-                <p class="text-2xl font-semibold text-gray-900">{{ \App\Models\Project::where('is_featured', true)->count() }}</p>
+                <p class="text-2xl font-semibold text-gray-900">{{ \App\Models\Project::count() }}</p>
             </div>
         </div>
     </div>
@@ -117,7 +117,7 @@
             </div>
         </a>
 
-        <a href="{{ route('admin.projects.create') }}" class="bg-white shadow rounded-lg p-6 hover:shadow-lg transition duration-200">
+        <a href="{{ route('admin.admin.projects.create') }}" class="bg-white shadow rounded-lg p-6 hover:shadow-lg transition duration-200">
             <div class="flex items-center">
                 <div class="p-3 rounded-full bg-green-500 bg-opacity-10">
                     <svg class="h-6 w-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">

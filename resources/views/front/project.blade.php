@@ -4,12 +4,13 @@
  
  <section id="projects" class="projects">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-description">
-                    Showcasing our latest work and successful client partnerships
-                </p>
-            </div>
+           <div class="section-header">
+    <h2 class="section-title">Projets à la une</h2>
+    <p class="section-description">
+        Découvrez nos dernières réalisations et nos collaborations réussies avec nos clients.
+    </p>
+</div>
+
 
             <!-- Project Slider -->
             <div class="project-slider">
@@ -52,8 +53,12 @@
             </div>
 
             <!-- Project Grid -->
+
+         
             <div class="projects-grid">
-                <div class="project-card">
+             
+   @foreach ($projects as $item)
+                   <div class="project-card">
                     <img src="{{ asset('default.png') }}" alt="Fitness Tracker" class="project-card-image">
                     <div class="project-card-content">
                         <h3 class="project-card-title">Fitness Tracking App</h3>
@@ -66,34 +71,8 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <img src="{{ asset('default.png') }}" alt="Real Estate Portal" class="project-card-image">
-                    <div class="project-card-content">
-                        <h3 class="project-card-title">Real Estate Portal</h3>
-                        <p class="project-card-description">
-                            Property listing platform with advanced search and virtual tours
-                        </p>
-                        <div class="project-card-tags">
-                            <span class="project-tag">Next.js</span>
-                            <span class="project-tag">PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="{{ asset('default.png') }}" alt="Food Delivery" class="project-card-image">
-                    <div class="project-card-content">
-                        <h3 class="project-card-title">Food Delivery Service</h3>
-                        <p class="project-card-description">
-                            Multi-restaurant ordering system with real-time delivery tracking
-                        </p>
-                        <div class="project-card-tags">
-                            <span class="project-tag">React</span>
-                            <span class="project-tag">Express</span>
-                        </div>
-                    </div>
-                </div>
+            @endforeach
+             
             </div>
         </div>
     </section>

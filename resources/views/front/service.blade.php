@@ -5,11 +5,11 @@
    <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-description">
-                    Comprehensive development solutions tailored to your business needs
-                </p>
-            </div>
+            <h2 class="section-title">Nos Services</h2>
+            <p class="section-description">
+                Découvrez les solutions que nous proposons pour transformer vos idées en réalité.
+            </p>
+        </div>
 
             <div class="services-grid">
                 

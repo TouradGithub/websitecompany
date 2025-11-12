@@ -21,6 +21,9 @@
     <li class="{{ $route == 'admin.admin.projects.index' ? 'active' : '' }}">
       <a href="{{ route('admin.admin.projects.index') }}"><i class="fa fa-briefcase"></i> <span>Projets</span></a>
     </li>
+    <li class="{{ $route == 'admin.contacts.index' ? 'active' : '' }}">
+      <a href="{{ route('admin.contacts.index') }}"><i class="fa fa-envelope"></i> <span>Contacts</span></a>
+    </li>
     <li class="{{ $route == 'admin.settings.edit' ? 'active' : '' }}">
       <a href="{{ route('admin.settings.edit') }}"><i class="fa fa-cog"></i> <span>Paramètres du site</span></a>
     </li>
