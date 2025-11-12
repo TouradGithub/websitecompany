@@ -1,4 +1,4 @@
-@extends('Admin.layouts.master')
+@extends('admin.layouts.master')
 
 @section('pageTitle') <i class="fa fa-envelope"></i> Contacts @endsection
 @section('content')
