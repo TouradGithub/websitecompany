@@ -75,10 +75,13 @@
                   </div>
                   <div class="col-md-12">
                     <div class="">
-                      <form action="" method="POST">
-                          @csrf
-                          <button type="submit" style="cursor:pointer" class="btn btn-default btn-block confirm_logout"><i class="fa fa-power-off fa-fw"></i> Deconnexion</button>
-                      </form>
+                     <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" style="cursor:pointer" class="btn btn-default btn-block confirm_logout">
+                            <i class="fa fa-power-off fa-fw"></i> Déconnexion
+                        </button>
+                    </form>
+
                     </div>
                   </div>
                 </div>

@@ -261,9 +261,9 @@
             var that = $(this);
 
             swal({
-                title: "{!! trans('backend.confirm_logout') !!}",
+                title: "voulez-vous vraiment vous déconnecter ?",
                 icon: "info",
-                buttons: ["{!! trans('backend.no') !!}", "{!! trans('backend.yes') !!}"],
+                buttons: ["No", "Oui"],
                 dangerMode: true,
             })
             .then((willDelete) => {
