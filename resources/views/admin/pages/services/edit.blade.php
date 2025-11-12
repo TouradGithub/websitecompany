@@ -1,6 +1,4 @@
-
-@extends('Admin.layouts.master')
-
+@extends('admin.layouts.master')
 @section('pageTitle')
 	<i class="fa fa-edit"></i> Modifier Service
 @endsection

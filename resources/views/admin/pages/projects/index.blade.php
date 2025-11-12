@@ -1,5 +1,4 @@
-@extends('Admin.layouts.master')
-
+@extends('admin.layouts.master')
 @section('pageTitle') <i class="fa fa-folder-open"></i> les projects @endsection
 
 @section('content')
