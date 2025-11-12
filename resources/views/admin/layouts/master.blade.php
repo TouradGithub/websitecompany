@@ -161,10 +161,10 @@
   <!-- end -->
 
   <!-- Start Main Header -->
-  @include('Admin.includes._header')
+  @include('admin.includes._header')
 
   <!-- Left side column. contains the logo and sidebar -->
-  @include('Admin.includes._sidebar')
+  @include('admin.includes._sidebar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper ">
@@ -189,7 +189,7 @@
   <!-- /.content-wrapper -->
 
 
-  @include('Admin.includes._footer')
+  @include('admin.includes._footer')
 
 
 </div>
@@ -198,7 +198,7 @@
 
 
 
-@include('Admin.layouts.footer-scripts')
+@include('admin.layouts.footer-scripts')
 
 <script>
     $(document).ready(function() {
