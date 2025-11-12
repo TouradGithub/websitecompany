@@ -1,3 +1,7 @@
+@php
+    $setting = App\Models\Setting::first();
+@endphp
+
 <header class="main-header">
 
     <!-- Logo -->
@@ -52,7 +56,10 @@
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{{ asset(auth()->user()->avatar) }}" class="img-circle" alt="User Image">
+                 {{-- @if(!empty($setting->logo))
+                        <img src="{{ asset('storage/' . $setting->logo) }}" alt="Logo" class="img-thumbnail mb-2" style="max-height:80px;">
+                    @endif --}}
+                <img src="{{ asset('storage/' . $setting->logo) }}" class="img-circle" alt="User Image">
                 <p>
                  {{ auth()->user()->email }} <small></small>
                 </p>

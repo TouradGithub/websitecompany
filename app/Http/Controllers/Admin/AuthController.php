@@ -23,14 +23,8 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            // check admin
-            if (!auth()->user()->is_admin) {
-                Auth::logout();
-                return redirect()->route('admin.admin.projects.index')
-                    ->withErrors(['email' => 'Accès administrateur requis.']);
-            }
-
-            return redirect()->intended(route('admin.dashboard'));
+           
+            return redirect()->intended(route('admin.admin.projects.index'));
         }
 
         return back()->withErrors([

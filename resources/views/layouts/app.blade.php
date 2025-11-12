@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevCraft Solutions - Professional Software Development</title>
     <meta name="description" content="Transform your ideas into powerful digital solutions with our expert development team">
-
     <style>
         /* CSS Reset & Base Styles */
         * {
@@ -84,6 +83,39 @@
 
         .logo:hover {
             color: var(--primary-dark);
+        }
+
+            .logo {
+            /* Updated logo to flex container for icon and text */
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Added logo icon styles */
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .logo-icon svg {
+            width: 24px;
+            height: 24px;
         }
 
         .nav-menu {
@@ -834,14 +866,17 @@
     </style>
 </head>
 <body>
-
     @php
         $setting = App\Models\Setting::first();
     @endphp
-    <!-- Header -->
 <header class="header">
     <nav class="nav-container">
-        <a href="#" class="logo">{{ $setting?->name }}</a>
+        <a href="#" class="logo">
+                    <div class="logo-icon">
+                       <img src="{{ asset('storage/'.$setting->logo) }}" style="width:35px;height:35px;border-radius: 10%" alt="">
+
+                </div>
+            {{ $setting?->name }}</a>
 
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Basculer le menu">
             <span class="hamburger"></span>
@@ -903,10 +938,7 @@
             <div class="contact-info">
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
+                        im
                     </div>
                     <h3 class="contact-card-title">Adresse du bureau</h3>
                     <p class="contact-card-text">{{ $setting?->localisation }}</p>

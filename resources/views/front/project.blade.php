@@ -20,7 +20,7 @@
                         @foreach ($projects as $item)
                             
                          <div class="project-slide">
-                            <img src="{{ asset($item->image) }}" alt="E-Commerce Platform" class="project-image">
+                            <img src="{{ asset('storage/' . $item->image) }}" alt="E-Commerce Platform" class="project-image">
                             <div class="project-overlay">
                                 <h3 class="project-title">{{ $item->name }}</h3>
                                 <p class="project-description">{{ $item->description }}</p>

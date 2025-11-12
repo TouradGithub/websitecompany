@@ -1,16 +1,16 @@
 @extends('Admin.layouts.master')
 
-@section('pageTitle') <i class="fa fa-folder-open"></i> {{ trans('backend.projects') }} @endsection
+@section('pageTitle') <i class="fa fa-folder-open"></i> les projects @endsection
 
 @section('content')
     <div class="box">
         <div class="box-header with-border">
             <h3 class="box-title" style="padding:10px">
-                {{ trans('backend.info') }} {{ trans('backend.projects') }}
+               Les Projects
             </h3>
             <div class="button-page-header">
                 <a class="btn btn-block btn-primary" href="{{ route('admin.admin.projects.create') }}">
-                <i class="fa fa-plus-circle fa-fw fa-lg"></i> {{ trans('backend.create_new') }}</a>
+                <i class="fa fa-plus-circle fa-fw fa-lg"></i>Nouvelle projects</a>
             </div>
         </div>
         <div class="box-body">
@@ -19,11 +19,11 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th><b>{{ trans('backend.name') }}</b></th>
-                            <th><b>{{ trans('backend.skills') }}</b></th>
-                            <th><b>{{ trans('backend.description') }}</b></th>
-                            <th><b>{{ trans('backend.image') }}</b></th>
-                            <th width="8%"><b>{{ trans('backend.manage') }}</b></th>
+                            <th><b>Nom</b></th>
+                            <th><b>Competence</b></th>
+                            <th><b>Description</b></th>
+                            <th><b>Photo</b></th>
+                            <th width="8%"><b>Actions</b></th>
                         </tr>
                     </thead>
                     <tbody>
