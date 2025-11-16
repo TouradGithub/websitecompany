@@ -43,6 +43,13 @@
                                     <a href="{{ route('admin.services.edit', $service) }}" class="btn btn-sm btn-info" >
                                         <i class="fa fa-edit fa-lg"></i>
                                     </a>    
+                                      <form method="POST" action="{{ route('admin.services.destroy', $service) }}" style="display:inline-block">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">
+                                            <i class="fa fa-trash fa-lg"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

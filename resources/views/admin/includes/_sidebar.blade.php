@@ -2,12 +2,16 @@
     $segment = Request::segment(3);
     $route = Route::currentRouteName();
 @endphp
+
+@php
+    $setting = App\Models\Setting::first();
+@endphp
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <div class="user-panel">
         <div class="pull-left">
-          <img src="{{ asset(auth()->user()->avatar) }}" style="width:40px;height:40px;border-radius:50%" class="" alt="User Image">
+          <img src="{{ asset('storage/'.$setting->logo) }}" style="width:40px;height:40px;border-radius:50%" class="" alt="User Image">
         </div>
         <div class="pull-left info" style="margin-top:10px">
           <p> {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</p>

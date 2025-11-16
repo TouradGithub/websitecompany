@@ -52,7 +52,7 @@ class ProjectController extends Controller
             $data['image'] = $request->file('image')->store('projects', 'public');
         }
         $project->update($data);
-    return redirect()->route('admin.admin.projects.index')->with('success', 'Project updated successfully');
+        return redirect()->route('admin.admin.projects.index')->with('success', 'Project updated successfully');
     }
 
     public function show(\App\Models\Project $project)
@@ -85,7 +85,8 @@ class ProjectController extends Controller
 
         $project->delete();
 
-        return redirect()->route('admin.projects.index')
+        return redirect()->route('admin.admin.projects.index')
             ->with('success', 'Projet supprimé avec succès');
+
     }
 }
