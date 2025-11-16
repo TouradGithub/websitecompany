@@ -59,11 +59,11 @@
              
    @foreach ($projects as $item)
                    <div class="project-card">
-                    <img src="{{ asset('default.png') }}" alt="Fitness Tracker" class="project-card-image">
+                    <img src="{{    isset($item->image) ? asset('storage/'.$item->image):  asset('default.png') }}" alt="No Image" class="project-card-image">
                     <div class="project-card-content">
-                        <h3 class="project-card-title">Fitness Tracking App</h3>
+                        <h3 class="project-card-title">{{ $item?->name??'' }}</h3>
                         <p class="project-card-description">
-                            Social fitness platform with workout tracking and community features
+                           {{ $item?->description??'' }}
                         </p>
                         <div class="project-card-tags">
                             <span class="project-tag">Flutter</span>
