@@ -23,11 +23,11 @@
                             <img src="{{ asset('storage/' . $item->image) }}" alt="E-Commerce Platform" class="project-image">
                             <div class="project-overlay">
                                 <h3 class="project-title">{{ $item->name }}</h3>
-                                <p class="project-description">{{ $item->description }}</p>
+                                <p class="project-description">{!! $item->description !!}</p>
                                 <div class="project-tags">
-                                    <span class="project-tag">React</span>
+                                    {{-- <span class="project-tag">React</span>
                                     <span class="project-tag">Node.js</span>
-                                    <span class="project-tag">MongoDB</span>
+                                    <span class="project-tag">MongoDB</span> --}}
                                 </div>
                             </div>
                         </div>
@@ -51,28 +51,23 @@
 
                 <div class="slider-dots" id="sliderDots"></div>
             </div>
-
             <!-- Project Grid -->
-
-         
             <div class="projects-grid">
-             
-   @foreach ($projects as $item)
-                   <div class="project-card">
-                    <img src="{{    isset($item->image) ? asset('storage/'.$item->image):  asset('default.png') }}" alt="No Image" class="project-card-image">
-                    <div class="project-card-content">
-                        <h3 class="project-card-title">{{ $item?->name??'' }}</h3>
-                        <p class="project-card-description">
-                           {{ $item?->description??'' }}
-                        </p>
-                        <div class="project-card-tags">
-                            {{-- <span class="project-tag">Flutter</span>
-                            <span class="project-tag">Firebase</span> --}}
+                @foreach ($projects as $item)
+                    <div class="project-card">
+                        <img src="{{    isset($item->image) ? asset('storage/'.$item->image):  asset('default.png') }}" alt="No Image" class="project-card-image">
+                        <div class="project-card-content">
+                            <h3 class="project-card-title">{{ $item?->name??'' }}</h3>
+                            <p class="project-card-description">
+                            {!! $item?->description??'' !!}
+                            </p>
+                            <div class="project-card-tags">
+                                {{-- <span class="project-tag">Flutter</span>
+                                <span class="project-tag">Firebase</span> --}}
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
-             
+                @endforeach
             </div>
         </div>
     </section>
