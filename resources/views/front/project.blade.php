@@ -66,8 +66,8 @@
                            {{ $item?->description??'' }}
                         </p>
                         <div class="project-card-tags">
-                            <span class="project-tag">Flutter</span>
-                            <span class="project-tag">Firebase</span>
+                            {{-- <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Firebase</span> --}}
                         </div>
                     </div>
                 </div>
