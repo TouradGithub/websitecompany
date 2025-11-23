@@ -29,7 +29,7 @@
                             <tr>
                                 <td>{{ $project->id }}</td>
                                 <td>{{ $project->name }}</td>
-                                <td>{{ $project->description }}</td>
+                                <td>{!! $project->description !!}</td>
                                 <td>
                                     @if($project->image)
                                         <img src="{{ asset('storage/' . $project->image) }}" style="max-width:100px">
