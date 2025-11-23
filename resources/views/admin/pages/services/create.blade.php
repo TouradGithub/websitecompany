@@ -29,7 +29,7 @@
 
                 <!-- Start Row  -->
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label for="name"><b>Nom</b></label>
                             <input type="text" name="name" id="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name') }}">
@@ -41,17 +41,6 @@
                         </div>
                     </div>
 
-                       <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="icon"><b>Icône</b></label>
-                            <input type="text" name="icon" id="icon" class="form-control {{ $errors->has('icon') ? 'is-invalid' : '' }}" value="{{ old('icon') }}">
-                            @if ($errors->has('icon'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('icon') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div>
 
                 </div>
 
@@ -91,7 +80,7 @@
                     </div>
                 </div>
 
-                
+
 
                     <div class="col-md-12">
                         <div class="text-center" style="margin-top:30px">

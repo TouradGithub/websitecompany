@@ -1,16 +1,15 @@
 @extends('admin.layouts.master')
 
 @section('pageTitle')
-    <i class="fa fa-plus-circle"></i> {{ trans('backend.add') }} {{ trans('backend.projects') }}
+    <i class="fa fa-plus-circle"></i> Projects
 @endsection
 
 @section('content')
     <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title">{{ trans('backend.enter') }} {{ trans('backend.infos') }}</h3>
             <div class="button-page-header" style="margin-top:5px">
                 <a class="btn btn-block btn-warning" href="{{ route('admin.admin.projects.index') }}">
-                <i class="fa fa-reply fa-fw fa-lg"></i> {{ trans('backend.back') }}</a>
+                <i class="fa fa-reply fa-fw fa-lg"></i> Retour</a>
             </div>
         </div>
         <div class="box-body">
@@ -18,9 +17,9 @@
                 {{ csrf_field() }}
                 {{ method_field('POST') }}
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
-                            <label for="name"><b>{{ trans('backend.name') }}</b></label>
+                            <label for="name"><b>Nom</b></label>
                             <input type="text" name="name" id="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name') }}">
                             @if ($errors->has('name'))
                                 <span class="invalid-feedback" role="alert">
@@ -29,17 +28,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="skills"><b>{{ trans('backend.skills') }}</b></label>
-                            <input type="text" name="skills" id="skills" class="form-control {{ $errors->has('skills') ? 'is-invalid' : '' }}" value="{{ old('skills') }}">
-                            @if ($errors->has('skills'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('skills') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div>
+
                 </div>
                 <div class="row">
                     <div class="col-md-3">

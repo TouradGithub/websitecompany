@@ -54,15 +54,7 @@
                                 </span>
                             @endif
                         </div>
-                        <div class="form-group mb-4">
-                            <label for="skills" class="font-weight-bold">Compétences</label>
-                            <input type="text" name="skills" id="skills" class="form-control {{ $errors->has('skills') ? 'is-invalid' : '' }}" value="{{ old('skills', $project->skills) }}">
-                            @if ($errors->has('skills'))
-                                <span class="invalid-feedback d-block" role="alert">
-                                    <strong>{{ $errors->first('skills') }}</strong>
-                                </span>
-                            @endif
-                        </div>
+
                         <div class="form-group mb-4">
                             <label for="description" class="font-weight-bold">Description</label>
                             <textarea name="description" id="description" rows="5" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}">{{ old('description', $project->description) }}</textarea>

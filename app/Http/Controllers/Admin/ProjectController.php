@@ -25,7 +25,6 @@ class ProjectController extends Controller
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'skills' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpg,jpeg,png,gif',
         ]);
         if ($request->hasFile('image')) {
@@ -45,7 +44,6 @@ class ProjectController extends Controller
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'skills' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpg,jpeg,png,gif',
         ]);
         if ($request->hasFile('image')) {

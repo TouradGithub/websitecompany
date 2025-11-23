@@ -31,7 +31,7 @@ class ContactController extends Controller
 
         // optionally: send email if mail configured (not required here)
 
-        return redirect()->back()->with('success', 'merci pour votre message. Nous vous répondrons bientôt.');
+        return response()->json(['success' => true, 'message' => 'Message received']);
     }
 
     public function destroy(Contact $contact)

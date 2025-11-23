@@ -19,7 +19,6 @@
             <div class="col-md-8">
                 <h4 class="font-weight-bold mb-3">{{ $project->name }}</h4>
                 <p><strong>{{ trans('backend.description') }}:</strong> {{ $project->description }}</p>
-                <p><strong>{{ trans('backend.skills') }}:</strong> {{ $project->skills }}</p>
             </div>
         </div>
         <div class="d-flex justify-content-center mt-4">

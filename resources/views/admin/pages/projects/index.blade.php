@@ -19,7 +19,6 @@
                         <tr>
                             <th>#</th>
                             <th><b>Nom</b></th>
-                            <th><b>Competence</b></th>
                             <th><b>Description</b></th>
                             <th><b>Photo</b></th>
                             <th width="8%"><b>Actions</b></th>
@@ -30,7 +29,6 @@
                             <tr>
                                 <td>{{ $project->id }}</td>
                                 <td>{{ $project->name }}</td>
-                                <td>{{ $project->skills }}</td>
                                 <td>{{ $project->description }}</td>
                                 <td>
                                     @if($project->image)

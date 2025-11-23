@@ -19,7 +19,6 @@
                         <tr>
                             <th>#</th>
                             <th><b>Nom</b></th>
-                            <th><b>Icône</b></th>
                             <th><b>Description</b></th>
                             <th><b>Image</b></th>
                             <th width="8%"><b>Gérer</b></th>
@@ -30,7 +29,6 @@
                             <tr>
                                 <td>{{ $service->id }}</td>
                                 <td>{{ $service->name }}</td>
-                                <td><i class="{{ $service->icon }}"></i></td>
                                 <td>{{ $service->description }}</td>
                                 <td>
                                     @if($service->image)
@@ -42,7 +40,7 @@
                                 <td>
                                     <a href="{{ route('admin.services.edit', $service) }}" class="btn btn-sm btn-info" >
                                         <i class="fa fa-edit fa-lg"></i>
-                                    </a>    
+                                    </a>
                                       <form method="POST" action="{{ route('admin.services.destroy', $service) }}" style="display:inline-block">
                                         @csrf
                                         @method('DELETE')

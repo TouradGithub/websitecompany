@@ -37,17 +37,7 @@
 							@endif
 						</div>
 					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<label for="icon"><b>Icône</b></label>
-							<input type="text" name="icon" id="icon" class="form-control {{ $errors->has('icon') ? 'is-invalid' : '' }}" value="{{ old('icon', $service->icon) }}">
-							@if ($errors->has('icon'))
-								<span class="invalid-feedback" role="alert">
-									<strong>{{ $errors->first('icon') }}</strong>
-								</span>
-							@endif
-						</div>
-					</div>
+
 				</div>
 				<div class="row">
 					<div class="col-md-3">
