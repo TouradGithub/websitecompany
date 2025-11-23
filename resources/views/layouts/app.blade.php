@@ -15,17 +15,26 @@
 <!-- Header -->
 <header>
     <div class="header-content">
+
         <a href="#" class="logo" style="display:flex; align-items:center; text-decoration:none; font-size:22px; font-weight:bold; color:#000;">
-            <img src="{{asset('storage/'.$setting->logo)}}" alt="Logo"          style="width:40px; height:40px; object-fit:cover; margin-right:6px; border-radius:50%;">
-            {{$setting?->name}}</a>
-        <nav>
+            <img src="{{asset('storage/'.$setting->logo)}}" alt="Logo"
+                 style="width:40px; height:40px; object-fit:cover; margin-right:6px; border-radius:50%;">
+            {{$setting?->name}}
+        </a>
+
+        <!-- Hamburger menu for mobile -->
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <nav id="nav-menu">
             <a href="#templates">Modèles</a>
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
             <a href="#contact" class="cta-btn">Commencer</a>
         </nav>
+
     </div>
 </header>
+
 
 <!-- Hero Section with Background Slider -->
 <section class="hero">
@@ -33,15 +42,6 @@
         <div class="hero-slide active">
             <img src="{{asset('uploads/img/coffee-shop-interior-with-plants-and-shelves.jpg')}}" alt="Plant Store">
         </div>
-{{--        <div class="hero-slide">--}}
-{{--            <img src="/placeholder.svg?height=1080&width=1920" alt="Boutique">--}}
-{{--        </div>--}}
-{{--        <div class="hero-slide">--}}
-{{--            <img src="/placeholder.svg?height=1080&width=1920" alt="Restaurant">--}}
-{{--        </div>--}}
-{{--        <div class="hero-slide">--}}
-{{--            <img src="/placeholder.svg?height=1080&width=1920" alt="Studio">--}}
-{{--        </div>--}}
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -227,5 +227,11 @@
 
     }
 </script>
+<script>
+    function toggleMenu() {
+        document.getElementById('nav-menu').classList.toggle('active');
+    }
+</script>
+
 </body>
 </html>
