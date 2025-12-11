@@ -58,4 +58,10 @@ class HomeController extends Controller
         $projects = Project::latest()->paginate(9);
         return view('portfolio', compact('projects'));
     }
+
+    public function showService(Service $service)
+    {
+        $otherServices = Service::where('id', '!=', $service->id)->take(3)->get();
+        return view('front.service-show', compact('service', 'otherServices'));
+    }
 }

@@ -63,12 +63,13 @@
     <h2 class="section-title">Des modèles primés</h2>
     <div class="templates-grid">
         @foreach(App\Models\Service::all() as $service)
-        <div class="template-card">
-            <img src="{{asset('storage/'.$service->image)}}" alt="Coffee Shop">
+        <a href="{{ route('service.show', $service) }}" class="template-card" style="text-decoration: none;">
+            <img src="{{asset('storage/'.$service->image)}}" alt="{{ $service->name }}">
             <div class="template-info">
                 <h3>{{$service->name}}</h3>
+                <p>Voir les details →</p>
             </div>
-        </div>
+        </a>
         @endforeach
     </div>
 </section>
