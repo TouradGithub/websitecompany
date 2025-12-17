@@ -19,8 +19,8 @@
     showSlide(currentSlide);
 }
 
-    // Auto slide every 5 seconds
-    setInterval(nextSlide, 5000);
+    // Auto slide every 6 seconds (matches the zoom animation duration)
+    setInterval(nextSlide, 6000);
 
     // Indicator click
     indicators.forEach((indicator, index) => {

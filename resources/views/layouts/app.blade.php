@@ -40,7 +40,19 @@
 <section class="hero">
     <div class="hero-slider">
         <div class="hero-slide active">
-            <img src="{{asset('uploads/img/coffee-shop-interior-with-plants-and-shelves.jpg')}}" alt="Plant Store">
+            <img src="{{asset('imgs/340c677d-eaff-4494-bd15-1f9acde741ea.JPG')}}" alt="Slide 1">
+        </div>
+        <div class="hero-slide">
+            <img src="{{asset('imgs/7c5cd012-f37b-416a-a2ed-254472dc4a6a.JPG')}}" alt="Slide 2">
+        </div>
+        <div class="hero-slide">
+            <img src="{{asset('imgs/8a288c29-1710-4c1d-9672-18521a58b036.JPG')}}" alt="Slide 3">
+        </div>
+        <div class="hero-slide">
+            <img src="{{asset('imgs/ebd05ec7-5985-4519-8f43-210e45eb2a0d.JPG')}}" alt="Slide 4">
+        </div>
+        <div class="hero-slide">
+            <img src="{{asset('imgs/fc65ff08-feb2-40b8-9c89-9d10e0d52fee.JPG')}}" alt="Slide 5">
         </div>
     </div>
     <div class="hero-overlay"></div>
@@ -55,6 +67,7 @@
         <span class="indicator" data-slide="1"></span>
         <span class="indicator" data-slide="2"></span>
         <span class="indicator" data-slide="3"></span>
+        <span class="indicator" data-slide="4"></span>
     </div>
 </section>
 @include('front.galerie')
