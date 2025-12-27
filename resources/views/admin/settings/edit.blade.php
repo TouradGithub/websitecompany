@@ -28,6 +28,10 @@
                     <textarea name="description" id="description" required class="form-control" rows="3">{{ old('description', $setting->description ?? '') }}</textarea>
                 </div>
                 <div class="form-group mb-3">
+                    <label for="about_content" class="font-weight-bold">Contenu de la page "À propos"</label>
+                    <textarea name="about_content" id="about_content" class="form-control" rows="6" placeholder="Écrivez ici le contenu de votre page À propos...">{{ old('about_content', $setting->about_content ?? '') }}</textarea>
+                </div>
+                <div class="form-group mb-3">
                     <label for="logo" class="font-weight-bold">Logo</label><br>
                     @if(!empty($setting->logo))
                         <img src="{{ asset('storage/' . $setting->logo) }}" alt="Logo" class="img-thumbnail mb-2" style="max-height:80px;">

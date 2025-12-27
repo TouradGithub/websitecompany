@@ -26,10 +26,10 @@
         <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
         <nav id="nav-menu">
-            <a href="#templates">Modèles</a>
+            {{-- <a href="#templates">Modèles</a> --}}
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
-            <a href="#contact" class="cta-btn">Commencer</a>
+            <a href="{{ route('about') }}" class="cta-btn">À propos</a>
         </nav>
 
     </div>
@@ -55,13 +55,6 @@
             <img src="{{asset('imgs/fc65ff08-feb2-40b8-9c89-9d10e0d52fee.JPG')}}" alt="Slide 5">
         </div>
     </div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h1>Un site web rend tout possible</h1>
-        <p>{{$setting?->description}} </p>
-        <p>Créez un site web magnifique qui représente vraiment votre marque</p>
-        <a href="#" class="hero-btn">Commencer</a>
-    </div>
     <div class="hero-indicators">
         <span class="indicator active" data-slide="0"></span>
         <span class="indicator" data-slide="1"></span>
@@ -70,10 +63,20 @@
         <span class="indicator" data-slide="4"></span>
     </div>
 </section>
+
+<!-- Hero Content Section -->
+<section class="hero-content-section">
+    <div class="hero-content-wrapper">
+        {{-- <h1>Un site web rend tout possible</h1> --}}
+        <p class="hero-description">{{$setting?->description}}</p>
+        <p class="hero-subtitle">Créez un site web magnifique qui représente vraiment votre marque</p>
+        <a href="#contact" class="hero-btn">Commencer</a>
+    </div>
+</section>
 @include('front.galerie')
 <!-- Template Showcase -->
 <section class="template-showcase" id="templates">
-    <h2 class="section-title">Des modèles primés</h2>
+    <h2 class="section-title">Notre Services</h2>
     <div class="templates-grid">
         @foreach(App\Models\Service::all() as $service)
         <a href="{{ route('service.show', $service) }}" class="template-card" style="text-decoration: none;">
@@ -110,7 +113,7 @@
 <!-- Boost Section -->
 <section class="boost-section">
     <div class="boost-content">
-        <h2 class="section-title">Boostez votre activité</h2>
+        <h2 class="section-title">Nos activités</h2>
         <div class="tabs">
             <div class="tab active" data-tab="design">Design</div>
             <div class="tab" data-tab="marketing">Marketing</div>

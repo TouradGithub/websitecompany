@@ -105,7 +105,9 @@ nav a:hover {
 .hero-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    background: #f5f5f5;
 }
 
 .hero-overlay {
@@ -175,6 +177,69 @@ nav a:hover {
 
 .indicator.active {
     background: #fff;
+}
+
+/* Hero Content Section - Separate from slider */
+.hero-content-section {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.hero-content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-content-section h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-content-section .hero-description {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.hero-content-section .hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 2rem;
+}
+
+.hero-content-section .hero-btn {
+    background: #fff;
+    color: #1a1a2e;
+    padding: 1rem 2.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-content-section .hero-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .hero-content-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content-section .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-content-section .hero-subtitle {
+        font-size: 0.95rem;
+    }
 }
 
 /* Template Showcase */
@@ -645,8 +710,139 @@ footer {
     color: #fff;
 }
 
+/* About Page Styles */
+.about-hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.about-hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.about-hero-content p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.about-content {
+    padding: 4rem 2rem;
+    background: #fff;
+}
+
+.about-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #1a1a2e;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 1rem;
+}
+
+.about-values {
+    margin-bottom: 4rem;
+}
+
+.about-values h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1a1a2e;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.value-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.value-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #1a1a2e;
+}
+
+.value-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.about-cta {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 3rem;
+    border-radius: 1rem;
+    text-align: center;
+    color: #fff;
+}
+
+.about-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.about-cta .hero-btn {
+    background: #fff;
+    color: #1a1a2e;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+    .about-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .about-hero {
+        padding: 6rem 1rem 3rem;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
     .hero h1 {
         font-size: 2.5rem;
     }

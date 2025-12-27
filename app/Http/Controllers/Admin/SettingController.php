@@ -19,6 +19,7 @@ class SettingController extends Controller
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
+            'about_content' => 'nullable|string',
             'logo' => 'nullable|image|mimes:jpg,jpeg,png,gif',
             'phone' => 'required|string|max:30',
             'whatsapp' => 'required|string|max:30',

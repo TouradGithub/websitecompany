@@ -328,11 +328,10 @@
         <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
         <nav id="nav-menu">
-            <a href="{{ route('home') }}#templates">Modeles</a>
+            {{-- <a href="{{ route('home') }}#templates">Modeles</a> --}}
             <a href="{{ route('home') }}#services">Services</a>
             <a href="{{ route('home') }}#contact">Contact</a>
-            <a href="{{ route('home') }}#contact" class="cta-btn">Commencer</a>
-        </nav>
+ <a href="{{ route('about') }}" class="cta-btn">À propos</a>        </nav>
     </div>
 </header>
 
@@ -354,7 +353,7 @@
     </div>
     <div class="service-hero-overlay"></div>
     <div class="service-hero-content">
-       
+
         <h1>{{ $service->name }}</h1>
     </div>
 </section>
