@@ -16,7 +16,7 @@
 <header>
     <div class="header-content">
 
-        <a href="#" class="logo" style="display:flex; align-items:center; text-decoration:none; font-size:22px; font-weight:bold; color:#000;">
+        <a href="{{ route('home') }}" class="logo" style="display:flex; align-items:center; text-decoration:none; font-size:22px; font-weight:bold; color:#000;">
             <img src="{{asset('storage/'.$setting->logo)}}" alt="Logo"
                  style="width:40px; height:40px; object-fit:cover; margin-right:6px; border-radius:50%;">
             {{$setting?->name}}
