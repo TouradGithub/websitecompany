@@ -329,7 +329,7 @@
 
         <nav id="nav-menu">
             {{-- <a href="{{ route('home') }}#templates">Modeles</a> --}}
-            <a href="{{ route('home') }}#services">Services</a>
+            <a href="{{ route('home') }}#templates">Services</a>
             <a href="{{ route('home') }}#contact">Contact</a>
  <a href="{{ route('about') }}" class="cta-btn">À propos</a>        </nav>
     </div>

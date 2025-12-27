@@ -27,7 +27,7 @@
 
         <nav id="nav-menu">
             {{-- <a href="#templates">Modèles</a> --}}
-            <a href="#services">Services</a>
+            <a href="#templates">Services</a>
             <a href="#contact">Contact</a>
             <a href="{{ route('about') }}" class="cta-btn">À propos</a>
         </nav>

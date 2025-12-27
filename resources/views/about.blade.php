@@ -25,7 +25,7 @@
 
         <nav id="nav-menu">
             <a href="{{ route('home') }}">Accueil</a>
-            <a href="{{ route('home') }}#services">Services</a>
+            <a href="{{ route('home') }}#templates">Services</a>
             <a href="{{ route('home') }}#contact">Contact</a>
             <a href="{{ route('about') }}" class="cta-btn">À propos</a>
         </nav>
